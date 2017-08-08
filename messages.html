@@ -1,0 +1,145 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SquizzUI</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="https://use.fontawesome.com/16a4097501.js"></script>
+</head>
+
+<body>
+    <div class="off-canvas position-left" id="offCanvas1" data-off-canvas data-transition="overlap">
+        <button class="close-button" aria-label="Close Menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
+        
+        <p>Menu 1</p>
+        <ul class="vertical menu">
+            <li>
+                <a href="">Button 1</a>
+                <a href="">Button 2</a>
+                <a href="">Button 3</a>
+                <a href="">Button 4</a>
+                <a href="">Button 5</a>
+            </li>
+        </ul>
+        <button type="button" class="button" data-toggle="offCanvas2">Open 2</button>
+    </div>
+    <div class="off-canvas position-left" id="offCanvas2" data-off-canvas data-transition="overlap">
+        <button class="close-button" aria-label="Close Menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
+        
+        <p>Menu 2</p>
+        <ul class="vertical menu">
+            <li>
+                <a href="">Button 1</a>
+                <a href="">Button 2</a>
+                <a href="">Button 3</a>
+            </li>
+        </ul>
+    </div>
+    <div class="off-canvas-content" data-off-canvas-content>
+        <div class="grid-y medium-grid-frame">
+            <div class="cell header shrink medium-cell-block-container">
+                <div class="grid-x grid-padding-x"><!--style="background-color: #00a0e3;"-->
+                    <div class="cell shrink">
+<!--                        <h4 style="color: white">SQUIZZ</h4>-->
+                    </div>
+                    <div class="cell shrink">
+                        <div class="nav-icon-bar">
+                            <ul class="dropdown menu" data-dropdown-menu="" style="color: white;">
+                                <li><a href=""><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-building-o" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-comment-o" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-hand-rock-o" aria-hidden="true"></i></a></li>
+                                <li><a href=""><i class="fa fa-hand-paper-o" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cell auto"></div>
+                    <div class="cell shrink">
+                        <div class="switch">
+                            <input class="switch-input" id="businessSwitch" type="checkbox" name="businessSwitch">
+                            <label class="switch-paddle" for="businessSwitch">
+                                <span class="show-for-sr">Personal or Business</span>
+                                <span class="switch-active" style="left: 13%;" aria-hidden="true"><i class="fa fa-fw fa-user-circle-o" aria-hidden="true"></i></span>
+                                <span class="switch-inactive" aria-hidden="true"><i class="fa fa-fw fa-id-card-o" style="color:#1779ba;" aria-hidden="true"></i></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell content medium-auto medium-cell-block-container">
+                <div class="grid-x">
+                    <div class="cell shrink">
+                        <p>cheese</p>
+                        <button type="button" class="button" data-toggle="offCanvas1">Open 1</button>
+                        <button type="button" class="button" data-toggle="offCanvas2">Open 2</button>
+                    </div>
+                    <div class="cell auto">
+                        <div class="grid-y conversation" style="border: 1px solid #cecece;">
+                            <div class="cell shrink conversation-header" style="border-bottom: 1px solid #cecece;">
+                                <p class="text-center">Conversation</p>
+                            </div>
+                            <div class="cell auto conversation-messages">
+                                <div class="callout message">
+                                    <div class="grid-x grid-padding-x">
+                                        <div class="cell shrink message-user">
+                                            <span class="avatar" title="Rowan"><img src="img/avatars/rowan.jpg" alt=""></span>
+                                        </div>
+                                        <div class="cell auto">
+                                            <p class="message-content">Hey Andy I ran out of time to add MWD2 to the deployer. When you get in are you able to update/create the global formats required for MWD1.1, then reassign local formats in the webpage areas for MWD 1.1 and 2 to the global formats, then after delete the local formats. After that work on getting the MWD2 into the website deployer, starting with loading the images based on the selected design </p>
+                                        </div>
+                                        <div class="cell shrink message-controls">
+                                            <span title="Like" class="label"><a href=""><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 5</a></span>
+                                            <span title="Acknowledge" class="label"><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i> 2</a></span>
+                                            <span title="Dislike" class="label"><a href=""><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 0</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="callout message owned">
+                                    <div class="grid-x grid-padding-x">
+                                        <div class="cell shrink message-user">
+                                            <span class="avatar" title="andy"><img src="img/avatars/andy.jpg" alt=""></span>
+                                        </div>
+                                        <div class="cell auto">
+                                            <p class="message-content">For the CSS, relative URLs would work well. 
+What if we renamed the repository of both MWD1 and MWD2 projects to be MWD so references went something like /libraries/repositories/MWD/etc allowing MWD1 formats to work on MWD2 sites and vice versa? </p>
+                                        </div>
+                                        <div class="cell shrink message-controls">
+                                            <div class="grid-y">
+                                                <div class="cell">
+                                                    <p class="text-center" style="font-size: 75%;margin-bottom: 0;">09:47AM 27/07/2017</p>
+                                                </div>
+                                                <div class="cell message-lad">
+                                                    <span title="Like" class="label"><a href=""><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 0</a></span>
+                                                    <span title="Acknowledge" class="label"><a href=""><i class="fa fa-hand-o-right" aria-hidden="true"></i> 2</a></span>
+                                                    <span title="Dislike" class="label"><a href=""><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> 0</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cell shrink conversation-input">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/dist/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
