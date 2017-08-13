@@ -3,6 +3,10 @@
 @import 'settings';
 @import 'variables';
 
+body {
+    overflow: hidden;
+}
+
 .content-header {
     @include breakpoint(large) {
         height: 5rem;
@@ -28,13 +32,77 @@
 }
 
 .content-body {
+    .cell {
+        &.full-height {
+            height: 100%;
+        }
+    }
     .cell-menu {
         @include breakpoint(large) {
             height: 100vh;
             width: 250px;
             border-right: 1px solid #cecece;
         }
+    }
+}
+
+.main-content {
+    .main-content-grid {
+        @include breakpoint(large) {
+            height: calc(100vh - 4rem);
+        }
+        >.cell {
+            &:not(:last-child) {
+                border-right: 1px solid #cecece;
+            }
+            &.full-height {
+                height:100%;
+            }
+            .section-header {
+                @include breakpoint(large) {
+                    height: 4rem;
+                }
+                .grid-x {
+                    width: 100%;
+                    height: 100%;
+                    .cell {
+                        display: flex;
+                        align-items: center;
+                        padding: 1rem;
+                    }
+                }
+                
+                h2 {
+                    margin-bottom: 0;
+                    font-size: 80%;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .button.section-close {
+                    background: #ce4444;
+                    color: #fff;
+                    border-radius: 5rem;
+                    margin-bottom: 0;
+                    padding: 0.5rem;
+                    width: 2rem;
+                }
+                border-bottom: 1px solid #cecece;
+            }
+        }
+    }
+}
+
+.admin-panel-cell {
+    width: 250px;
+    .section-header {
+        background: #333;
+        color: #fff;
+    }
+    .section-body {
+        height: calc(100% - 4rem);
         .vertical.menu.accordion-menu {
+            border-bottom: 1px solid #cecece;
             li {
                 border-top: 1px solid #cecece;
                 border-left: 0px;
@@ -45,14 +113,17 @@
                 &:first-child {
                     border-top: 0px;
                 }
+                .is-submenu-item:first-child {
+                    border-top: 1px solid #cecece;
+                }
                 &:hover {
                     >.submenu-toggle[aria-expanded="false"] {
                         &:not(:hover) {
                             &:after {
-                                width: auto;
-                                height: auto;
-                                border: none;
-                                content: 'GO';
+                                border-bottom-width: 6px;
+                                border-color: transparent transparent transparent #1779ba;
+                                border-right-width: 0;
+                                border-left-style: solid;
                             }
                         }
                     }
@@ -76,12 +147,13 @@
         }
         
         .submenu {
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
             .is-submenu-item {
                 //tier-1 bg
-                background: #444;
+                background: rgba(0,0,0,0.05);
                 a {
-                    color: #fafafa;
-                    text-shadow: 1px 1px #000;
+                    color: #555;
                 }
 //                >.submenu-toggle {
 //                        &:after {
@@ -97,12 +169,18 @@
             .submenu {
                 .is-submenu-item {
                     //tier-2 bg
-                    background: rgba(0, 49, 255,0.15);
+                    background: rgba(0,0,0,0.1);
+                    a {
+                        color: #444;
+                    }
                 }
                 .submenu {
                     .is-submenu-item {
                         //tier-3 bg
-                        background: rgba(0, 49, 255,0.2);
+                        background: rgba(0,0,0,0.15);
+                        a {
+                            color: #333;
+                        }
                     }
                     .submenu {
                         .is-submenu-item {
@@ -113,6 +191,16 @@
                 }
             }
         }
-        
+    }
+}
+    
+.conversations-cell {
+    width: 100%;
+    .section-header {
+        background: #929090;
+        color: #191818;
+    }
+    .section-body {
+        height: calc(100% - 9rem);
     }
 }

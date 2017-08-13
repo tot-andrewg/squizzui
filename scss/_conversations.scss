@@ -11,7 +11,7 @@
     }
     .conversation-messages {
         @include breakpoint(large) {
-            height: auto;
+//            height: auto;
         }
         .message {
             width: auto;
@@ -76,6 +76,8 @@
                 border-right: 0px;
                 border-bottom: 0px;
                 border-left: 1px solid #cecece;
+                overflow-y: scroll;
+                resize: none;
             }
             a.button {
                 height: 100%;

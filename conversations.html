@@ -35,21 +35,19 @@
                     ------------->
                     <header>
                         <div class="cell header shrink medium-cell-block-container">
-                            <div class="grid-x" style="background-color: #00a0e3;">
+                            <div class="grid-x">
                                 <div class="cell shrink nav-title">
-                                    <h4 style="color: white">SQUIZZ</h4>
+                                    <img src="img/squizz-logo.jpg" alt="">
                                 </div>
+<!--
                                 <div class="cell shrink">
                                     <div class="nav-icon-bar">
                                         <ul class="dropdown menu" data-dropdown-menu="" style="color: white;">
-                                            <li>
-                                                <a href="" class="text-center">
-                                                    <i class="fa fa-fw fa-user" aria-hidden="true"></i>
-                                                    <br>
-                                                    <small>CONTACTS</small>
-                                                </a>
-
-                                            </li>
+                                            <li><a href="" class="text-center">
+                                                <i class="fa fa-fw fa-user" aria-hidden="true"></i>
+                                                <br>
+                                                <small>CONTACTS</small>
+                                            </a></li>
                                             <li><a href="" class="text-center">
                                                 <i class="fa fa-fw fa-building-o" aria-hidden="true"></i>
                                                 <br>
@@ -88,7 +86,13 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="cell auto"></div>
+-->
+                                <div class="cell auto">
+                                </div>
+                                <div class="cell shrink nav-search">
+                                    <input type="text">
+                                    <a href="" class="button">Search</a>
+                                </div>
                                 <div class="cell shrink hide-for-large">
                                     <a type="button" class="button" data-toggle="offCanvas1">Page Menu</a>
                                 </div>
@@ -103,78 +107,99 @@
                     ---------->
                     <section class="main-content">
                         <div class="cell content medium-auto medium-cell-block-container">
-                            <div class="grid-x content-body">
+                            <div class="grid-x main-content-grid">
 
                                 <!-------------
                                     Admin panel
                                 --------------->
-                                <div class="cell cell-menu">
-                                    <section class="admin-panel">
-                                        <div class="grid-y">
-                                            <div class="cell section-header">
-                                                <p>ADMIN PANEL</p>
-                                            </div>
-                                            <div class="cell">
-                                                <div class="off-canvas position-left in-canvas-for-large" id="offCanvas1" data-off-canvas data-transition="push">
-                                                    <button class="close-button" aria-label="Close Menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
-                                                    <ul class="vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true">
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-user" aria-hidden="true"></i> CONTACTS</a>
-                                                            <ul class="menu vertical nested">
-                                                                <li>
-                                                                    <a href="#">VIEW CONTACTS</a>
-                                                                    <ul class="menu vertical nested">
-                                                                        <li><a href="#">Item 1Ai</a></li>
-                                                                        <li><a href="#">Item 1Aii</a></li>
-                                                                        <li><a href="#">Item 1Aiii</a></li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li><a href="#">MANAGE CONTACTS</a></li>
-                                                                <li><a href="#">SETTINGS</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-building-o" aria-hidden="true"></i> ORGANISATIONS</a>
-                                                            <ul class="menu vertical nested">
-                                                                <li><a href="#">VIEW ORGANISATION</a></li>
-                                                                <li><a href="#">ADD ORGANISATION</a></li>
-                                                                <li><a href="#">Item 2C</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-comment-o" aria-hidden="true"></i> CONVERSATIONS</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-rss" aria-hidden="true"></i> FEEDS</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i> BASKET</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i> ACCOUNT</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-hand-rock-o" aria-hidden="true"></i> PURCHASE ORDERS</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href=""><i class="fa fa-fw fa-hand-paper-o" aria-hidden="true"></i> SALES ORDERS</a>
-                                                        </li>
-                                                    </ul>
+                                <div class="cell full-height admin-panel-cell">
+                                    <div class="grid-y large-grid-frame">
+                                        <div class="cell large-cell-block-container section-header show-for-large">
+                                            <div class="grid-x">
+                                                <div class="cell auto">
+                                                    <h2>ADMIN PANEL</h2>
                                                 </div>
+<!--
+                                                <div class="cell shrink">
+                                                    <a href="" class="button section-close">&times;</a>
+                                                </div>
+-->
                                             </div>
                                         </div>
-                                    </section>
+                                        <div class="cell large-cell-block-container section-body">
+                                            <div class="off-canvas position-left in-canvas-for-large" id="offCanvas1" data-off-canvas data-transition="push">
+                                                <button class="close-button" aria-label="Close Menu" type="button" data-close><span aria-hidden="true">&times;</span></button>
+                                                <ul class="vertical menu accordion-menu" data-accordion-menu data-submenu-toggle="true">
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-user" aria-hidden="true"></i> CONTACTS</a>
+                                                        <ul class="menu vertical nested">
+                                                            <li>
+                                                                <a href="#">VIEW CONTACTS</a>
+                                                                <ul class="menu vertical nested">
+                                                                    <li>
+                                                                        <a href="#">Item 1Ai</a>
+                                                                        <ul class="menu vertical nested">
+                                                                            <li><a href="#">Item 1Ai</a></li>
+                                                                            <li><a href="#">Item 1Aii</a></li>
+                                                                            <li><a href="#">Item 1Aiii</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li><a href="#">Item 1Aii</a></li>
+                                                                    <li><a href="#">Item 1Aiii</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="#">MANAGE CONTACTS</a></li>
+                                                            <li><a href="#">SETTINGS</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-building-o" aria-hidden="true"></i> ORGANISATIONS</a>
+                                                        <ul class="menu vertical nested">
+                                                            <li><a href="#">VIEW ORGANISATION</a></li>
+                                                            <li><a href="#">ADD ORGANISATION</a></li>
+                                                            <li><a href="#">Item 2C</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-comment-o" aria-hidden="true"></i> CONVERSATIONS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-rss" aria-hidden="true"></i> FEEDS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-shopping-cart" aria-hidden="true"></i> BASKET</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-credit-card" aria-hidden="true"></i> ACCOUNT</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-hand-rock-o" aria-hidden="true"></i> PURCHASE ORDERS</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=""><i class="fa fa-fw fa-hand-paper-o" aria-hidden="true"></i> SALES ORDERS</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <!---------------
                                     Conversations
                                 ---------------->
-                                <div class="cell auto cell-content">
-                                    <div class="grid-y conversation">
-                                        <div class="cell cell-body-header">
-                                            <p>CONVERSATION</p>
+                                <div class="cell auto cell-content full-height conversations-cell">
+                                    <div class="grid-y medium-grid-frame conversation">
+                                        <div class="cell medium-cell-block-container section-header">
+                                            <div class="grid-x">
+                                                <div class="cell auto">
+                                                    <h2>CONVERSATIONS</h2>
+                                                </div>
+                                                <div class="cell shrink">
+                                                    <a href="" class="button section-close">&times;</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="cell auto conversation-messages">
+                                        <div class="cell medium-cell-block-y conversation-messages section-body">
                                             <div class="callout message">
                                                 <div class="grid-x grid-padding-x">
                                                     <div class="cell shrink message-user">
@@ -214,7 +239,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="cell shrink conversation-input">
+                                        <div class="cell medium-cell-block-container conversation-input">
                                             <div class="grid-x">
                                                 <div class="cell shrink">
                                                     <a href="" class="button">Send</a>
