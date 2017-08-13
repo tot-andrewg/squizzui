@@ -1,0 +1,118 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'variables';
+
+.content-header {
+    @include breakpoint(large) {
+        height: 5rem;
+    }
+    border-bottom: 1px solid #cecece;
+    .cell-header {
+        width: 250px;
+        border-right: 1px solid #cecece;
+        background: #4f75cc;
+        color: #fafafa;
+    }
+    .cell-body-header {
+        background: #6b6974;
+        color: #fafafa;
+    }
+    .cell {
+        display: flex;
+        align-items: center;
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.content-body {
+    .cell-menu {
+        @include breakpoint(large) {
+            height: 100vh;
+            width: 250px;
+            border-right: 1px solid #cecece;
+        }
+        .vertical.menu.accordion-menu {
+            li {
+                border-top: 1px solid #cecece;
+                border-left: 0px;
+                border-right: 0px;
+                &:not(:last-child) {
+                    border-bottom: 0px;
+                }
+                &:first-child {
+                    border-top: 0px;
+                }
+                &:hover {
+                    >.submenu-toggle[aria-expanded="false"] {
+                        &:not(:hover) {
+                            &:after {
+                                width: auto;
+                                height: auto;
+                                border: none;
+                                content: 'GO';
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .is-accordion-submenu-parent.has-submenu-toggle {
+            >a {
+            }
+            >.submenu-toggle {
+                border-left: 1px solid #cecece;
+            }
+            .menu.nested {
+                margin-left: 0;
+                li {
+                    &:last-child {
+                        border-bottom: 0px;
+                    }
+                }
+            }
+        }
+        
+        .submenu {
+            .is-submenu-item {
+                //tier-1 bg
+                background: #444;
+                a {
+                    color: #fafafa;
+                    text-shadow: 1px 1px #000;
+                }
+//                >.submenu-toggle {
+//                        &:after {
+//                            border-color: #fafafa transparent transparent;
+//                        }
+//                    &[aria-expanded="false"] {
+//                            &:after {
+//                                color: #fafafa;
+//                            }
+//                    }
+//                }
+            }
+            .submenu {
+                .is-submenu-item {
+                    //tier-2 bg
+                    background: rgba(0, 49, 255,0.15);
+                }
+                .submenu {
+                    .is-submenu-item {
+                        //tier-3 bg
+                        background: rgba(0, 49, 255,0.2);
+                    }
+                    .submenu {
+                        .is-submenu-item {
+                            //tier-4 bg
+                            background: rgba(0, 49, 255,0.25);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
