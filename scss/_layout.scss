@@ -7,6 +7,60 @@ body {
     overflow: hidden;
 }
 
+header {
+    height: 4rem;
+    background: $squizzcolor;
+    border-bottom: 1px solid black;
+    .header, .header>.grid-x {
+        height: 100%;
+    }
+    .nav-title {
+        background-color: #00a0e3;
+        width: 250px !important;
+//        border-right: 1px solid #000;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        @include breakpoint(large) {
+            padding-right: .9375rem;
+            padding-left: .9375rem;
+        }
+        img {
+            max-height: calc(4rem - 2px);
+            margin: 0 auto;
+        }
+    }
+    .nav-search {
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        input {
+            display: inline-block;
+            margin-bottom: 0px;
+        }
+        a {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.nav-icon-bar {
+    .menu {
+        a {
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+        }
+        li[role="menuitem"] {
+            position: relative;
+            border-right: 1px solid #cecece;
+            &:hover {
+                background: rgba(255,255,255,0.1);
+            }
+        }
+    }
+}
+
 .content-header {
     @include breakpoint(large) {
         height: 5rem;
@@ -101,8 +155,26 @@ body {
     }
     .section-body {
         height: calc(100% - 4rem);
+        background: #333;
         .vertical.menu.accordion-menu {
             border-bottom: 1px solid #cecece;
+            //first tier only
+            >li {
+                >a {
+                    color: $white;
+                    text-shadow: 1px 1px black;
+                    i {
+                    }
+                    &:hover {
+                        color: #ddd;
+                    }
+                }
+                >.submenu-toggle {
+                    &:after {
+                        border-color: $white transparent transparent;
+                    }
+                }
+            }
             li {
                 border-top: 1px solid #cecece;
                 border-left: 0px;
@@ -121,7 +193,7 @@ body {
                         &:not(:hover) {
                             &:after {
                                 border-bottom-width: 6px;
-                                border-color: transparent transparent transparent #1779ba;
+                                border-color: transparent transparent transparent $white;
                                 border-right-width: 0;
                                 border-left-style: solid;
                             }
@@ -165,13 +237,21 @@ body {
         }
         
         .submenu {
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+            border-top: 2px solid $squizzcolor;
+            li:hover>.submenu-toggle[aria-expanded="false"]:not(:hover):after {
+                border-color: transparent transparent transparent #333 !important;
+            }
+            .submenu-toggle {
+                &:after {
+                    border-color: #333 transparent transparent;
+                }
+            }
+
             .is-submenu-item {
                 //tier-1 bg
-                background: rgba(0,0,0,0.05);
+                background: $white;
                 a {
-                    color: #555;
+                    color: #333;
                 }
 //                >.submenu-toggle {
 //                        &:after {
@@ -185,17 +265,19 @@ body {
 //                }
             }
             .submenu {
+                border-top: 1px solid $squizzcolor;
+                border-bottom: 1px solid $squizzcolor;
                 .is-submenu-item {
                     //tier-2 bg
-                    background: rgba(0,0,0,0.1);
+                    background: #eee;
                     a {
-                        color: #444;
+                        color: #333;
                     }
                 }
                 .submenu {
                     .is-submenu-item {
                         //tier-3 bg
-                        background: rgba(0,0,0,0.15);
+                        background: #ddd;
                         a {
                             color: #333;
                         }
@@ -203,7 +285,10 @@ body {
                     .submenu {
                         .is-submenu-item {
                             //tier-4 bg
-                            background: rgba(0, 49, 255,0.25);
+                            background: $white;
+                            a {
+                                color: #333;
+                            }
                         }
                     }
                 }
@@ -212,11 +297,12 @@ body {
     }
 }
     
-.conversations-cell {
+.conversation-cell {
     width: 100%;
+    min-width: 600px;
     .section-header {
-        background: #929090;
-        color: #191818;
+        background: #0091ce;
+        color: $white;
     }
     .section-body {
         height: calc(100% - 4rem);
@@ -229,5 +315,17 @@ body {
         .conversation-messages {
             height: calc(100% - 5rem - 5rem);
         }
+    }
+}   
+
+.conversations-cell {
+    max-width: 450px;
+    min-width: 300px;
+    .section-header {
+        background: #0091ce;
+        color: $white;
+    }
+    .section-body {
+        height: calc(100% - 4rem);
     }
 }

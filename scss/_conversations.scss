@@ -11,6 +11,40 @@
         height: 5rem;
         border-bottom: 1px solid #cecece;
         overflow: hidden;
+        .info-grid {
+            border: 1px solid #cecece;
+            .info-grid-header {
+                display:flex;
+                align-content:center;
+                padding: 0.5rem 1rem;
+                border-right: 1px solid #cecece;
+                background: #f1f1f1;
+            }
+            .button {
+                margin-bottom: 0;
+            }
+        }
+        .conversation-subject {
+        }
+        .conversation-contacts {
+            .conversation-contact-listing {
+                display:flex;
+                align-content:center;
+                padding: 0 0.25rem;
+                overflow-x: scroll;
+                .conversation-contact {
+                    font-size: 75%;
+                    background: #f1f1f1;
+                    padding: 0.25rem;
+                    margin: auto 0.25rem;
+                    border-radius: 0.5rem;
+                    border: 1px solid #cecece;
+                    i {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
     .conversation-messages {
         @include breakpoint(large) {
@@ -114,6 +148,10 @@
     }
     .conversation-input {
         border-top: 1px solid #cecece;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         @include breakpoint(large) {
             height: 5rem;
         }
@@ -136,10 +174,21 @@
             }
         }
     }
+    
+}
+
+.conversations {
     .conversations-header {
         height: 5rem;
         .button-group {
             margin-bottom: 0;
+            .button {
+                margin-bottom: 0;
+            }
+        }
+        select {
+            width:100%;
+            margin-bottom:0;
         }
     }
     .conversations-listing {
@@ -147,11 +196,11 @@
         height: calc(100% - 5rem);
         .conversation-record {
             border-top: 1px solid #cecece;
+            &:first-child {
+                border-top: 0;
+            }
             &:last-child {
                 border-bottom: 1px solid #cecece;
-            }
-            &.conversation-active {
-                border-left: 4px solid #1779ba;
             }
             .conversation-record-user {
                 display: flex;
@@ -168,6 +217,8 @@
                 }
             }
             .conversation-record-info {
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
                 ul {
                     list-style: none;
                     margin: 0;
@@ -185,8 +236,12 @@
                     }
                 }
             }
-            .button-group {
-                margin-bottom: 0;
+            .conversation-record-controls {
+                display: flex;
+                align-content: center;
+                .button-group {
+                    margin-bottom: 0;
+                }
             }
         }
     }
