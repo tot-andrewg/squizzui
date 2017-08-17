@@ -35,12 +35,29 @@ header {
         align-items: center;
         padding-left: 1rem;
         padding-right: 1rem;
-        input {
-            display: inline-block;
-            margin-bottom: 0px;
+        .input-group {
+            margin-bottom: 0;
+            width: 450px;
         }
+//        input {
+//            display: inline-block;
+//            margin-bottom: 0px;
+//        }
+//        a {
+//            margin-bottom: 0px;
+//        }
+    }
+    .nav-user {
+        display: flex;
+        align-items: center;
+        padding-right: 1rem;
         a {
-            margin-bottom: 0px;
+            margin-bottom: 0;
+            img {
+                max-height: 2.5rem;
+                max-width: 2.5rem;
+                border-radius: 2rem;
+            }
         }
     }
 }
